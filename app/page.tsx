@@ -11,6 +11,8 @@ import { LinkPreview } from "@/components/ui/link-preview";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { WobbleCard } from "@/components/ui/wobble-card";
 import { Tooltip } from "@/components/ui/tooltip-card";
+import { ImagesBadge } from "@/components/ui/images-badge";
+import Image from "next/image";
 
 const skills = {
   languages: ["JavaScript", "Python", "TypeScript (Beginner)"],
@@ -31,11 +33,14 @@ const skills = {
 
 const experiences = [
   {
-    role: "React Developer",
-    company: "EcomSyncify",
+    role: "React Engineer",
+    company: "EcomSyncify (EcomZenith)",
     companyUrl: "https://ecomzenith.com/",
     duration: "Aug 2025 - Present",
-    points: ["Building scalable frontend applications", "Working with modern React ecosystem"],
+    points: [
+      "Building scalable ecommerce interfaces using React and modern frontend architecture.",
+      "Developing merchant-facing features with Shopify Polaris and Shopify Web Components.",
+    ],
   },
   {
     role: "Jr. Associate Developer",
@@ -59,7 +64,7 @@ const projects = [
     tech: ["React", "Tailwind CSS", "Framer Motion", "Locomotive Scroll"],
     description:
       "A visually rich React project with smooth scrolling, modern animations, and polished interactions.",
-    live: "#",
+    live: "https://ochi-2-0.vercel.app/",
     code: "#",
   },
   {
@@ -75,7 +80,15 @@ const projects = [
     tech: ["React", "Firebase"],
     description:
       "An open-source discovery platform with AI-powered recommendations based on user skills and interests.",
-    live: "#",
+    live: "https://ossphere.vercel.app/login",
+    code: "#",
+  },
+  {
+    name: "BharatStartupGallery",
+    tech: ["React", "Next.js", "Tailwind CSS"],
+    description:
+      "A curated startup discovery platform showcasing innovative Indian startups by category, with clean filters and modern UI.",
+    live: "https://bharatstartupgallery.vercel.app/",
     code: "#",
   },
   {
@@ -135,15 +148,29 @@ export default function Home() {
                 </>
               }
             >
-              <h1 className="mt-1 text-3xl font-semibold tracking-tight text-zinc-800 sm:text-4xl">
-                <Cover>Akhilesh Verma</Cover></h1>
+              <div className="mt-1 flex items-center justify-between gap-3">
+                <h1 className="text-3xl font-semibold tracking-tight text-zinc-800 sm:text-4xl">
+                  <Cover>Akhilesh Verma</Cover>
+                </h1>
+                <img
+                  src="https://media.tenor.com/fOD0TBLKQg8AAAAm/spider-man-no-way-home-marvel-studios.webp"
+                  alt="Animated avatar"
+                  width={64}
+                  height={64}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="sync"
+                  className="ml-auto h-18 w-18 rounded-full object-cover ring-1 ring-zinc-300 sm:h-18 sm:w-18"
+                />
+              </div>
             </FollowerPointerCard>
             <p className="mt-4 max-w-2xl text-[15px] leading-7 text-zinc-600">
-              Passionate React Developer at EcomSyncify,
-              skilled in <Highlight className="text-black dark:text-white">
-                MERN STACK
-              </Highlight> and focused on building
-              dynamic, user-centric web applications that create real impact.
+              React Developer at EcomSyncify with practical experience across the{" "}
+              <Highlight className="text-black dark:text-white">MERN stack</Highlight>, focused on
+              building modern interfaces that feel fast, clear, and intuitive. I enjoy crafting
+              thoughtful UI structure, consistent design systems, and smooth user flows while keeping
+              code scalable and maintainable. From idea framing to final delivery, I like turning
+              product concepts into polished, reliable web experiences.
             </p>
           </div>
 
@@ -168,17 +195,6 @@ export default function Home() {
         </header>
 
         <div className="mt-8 space-y-10">
-          <Section id="about" title="About">
-
-            <p className="text-[15px] leading-7 text-zinc-600">
-              I  my Diploma in Information
-              <LinkPreview url="https://gpkanpur.co.in/" className="border-b border-dotted border-zinc-500 text-zinc-700 transition hover:text-zinc-900"> Government Polytechnic Kanpur </LinkPreview> (2022-2025) with First Division Honours. I enjoy continuous learning, experimenting with modern tools, and shipping products that solve meaningful problems.
-              (2022-2025) with First Division Honours. I enjoy continuous learning, experimenting with
-              modern tools, and shipping products that solve meaningful problems.
-            </p>
-
-          </Section>
-
           <Section id="experience" title="Experience">
             <div className="space-y-6">
               {experiences.map((exp) => (
@@ -213,46 +229,46 @@ export default function Home() {
                   </>
                 }
               >
-              <WobbleCard
-                containerClassName="h-full bg-red-900/90 border border-zinc-800"
-                className="px-5 py-8 sm:px-6 sm:py-10"
-              >
-                <div>
-                  <h3 className="mb-3 text-sm font-semibold text-zinc-100">Languages</h3>
-                 
-                  <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
-                    {skills.languages.map((item) => (
-                      <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
-                        {item}
-                      </span>
-                    ))}
+                <WobbleCard
+                  containerClassName="h-full bg-red-900/90 border border-zinc-800"
+                  className="px-5 py-8 sm:px-6 sm:py-10"
+                >
+                  <div>
+                    <h3 className="mb-3 text-sm font-semibold text-zinc-100">Languages</h3>
+
+                    <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
+                      {skills.languages.map((item) => (
+                        <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+
                   </div>
-                 
-                </div>
-              </WobbleCard>
-              
-</FollowerPointerCard>
-<FollowerPointerCard
+                </WobbleCard>
+
+              </FollowerPointerCard>
+              <FollowerPointerCard
                 title={
                   <> <span className="text-zinc-100" > “I build fast, smooth apps that actually feel good to use ⚡”</span>
                   </>
                 }
               >
-              <WobbleCard
-                containerClassName="h-full bg-yellow-900/90 border border-zinc-800"
-                className="px-5 py-8 sm:px-6 sm:py-10"
-              >
-                <div>
-                  <h3 className="mb-3 text-sm font-semibold text-zinc-100">Web & Frameworks</h3>
-                  <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
-                    {skills.web.map((item) => (
-                      <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
-                        {item}
-                      </span>
-                    ))}
+                <WobbleCard
+                  containerClassName="h-full bg-yellow-900/90 border border-zinc-800"
+                  className="px-5 py-8 sm:px-6 sm:py-10"
+                >
+                  <div>
+                    <h3 className="mb-3 text-sm font-semibold text-zinc-100">Web & Frameworks</h3>
+                    <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
+                      {skills.web.map((item) => (
+                        <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </WobbleCard>
+                </WobbleCard>
               </FollowerPointerCard>
               <FollowerPointerCard
                 title={
@@ -260,21 +276,21 @@ export default function Home() {
                   </>
                 }
               >
-              <WobbleCard
-                containerClassName="h-full bg-green-900/90 border border-zinc-800"
-                className="px-5 py-8 sm:px-6 sm:py-10"
-              >
-                <div>
-                  <h3 className="mb-3 text-sm font-semibold text-zinc-100">Tools & Technologies</h3>
-                  <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
-                    {skills.tools.map((item) => (
-                      <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
-                        {item}
-                      </span>
-                    ))}
+                <WobbleCard
+                  containerClassName="h-full bg-green-900/90 border border-zinc-800"
+                  className="px-5 py-8 sm:px-6 sm:py-10"
+                >
+                  <div>
+                    <h3 className="mb-3 text-sm font-semibold text-zinc-100">Tools & Technologies</h3>
+                    <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
+                      {skills.tools.map((item) => (
+                        <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </WobbleCard>
+                </WobbleCard>
               </FollowerPointerCard>
               <FollowerPointerCard
                 title={
@@ -282,26 +298,34 @@ export default function Home() {
                   </>
                 }
               >
-              <WobbleCard
-                containerClassName="h-full bg-blue-700/90 border border-zinc-800"
-                className="px-5 py-8 sm:px-6 sm:py-10"
-              >
-                <div>
-                  <h3 className="mb-3 text-sm font-semibold text-zinc-100">Design</h3>
-                  <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
-                    {skills.design.map((item) => (
-                      <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
-                        {item}
-                      </span>
-                    ))}
+                <WobbleCard
+                  containerClassName="h-full bg-blue-700/90 border border-zinc-800"
+                  className="px-5 py-8 sm:px-6 sm:py-10"
+                >
+                  <div>
+                    <h3 className="mb-3 text-sm font-semibold text-zinc-100">Design</h3>
+                    <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
+                      {skills.design.map((item) => (
+                        <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </WobbleCard>
+                </WobbleCard>
               </FollowerPointerCard>
             </div>
           </Section>
 
-          <Section id="projects" title="Projects">
+          <Section id="projects" title="">
+            <ImagesBadge
+              text="Projects"
+              images={[
+                "https://assets.aceternity.com/pro/agenforce-1.webp",
+                "https://assets.aceternity.com/pro/agenforce-2.webp",
+                "https://assets.aceternity.com/pro/agenforce-3.webp",
+              ]}
+            />
             <div className="space-y-6">
               {projects.map((project) => (
                 <article key={project.name} className="space-y-2">
@@ -315,9 +339,12 @@ export default function Home() {
                     ))}
                   </div>
                   <div className="flex gap-4 pt-1 text-sm">
-                    <a href={project.live} className="text-zinc-700 underline-offset-4 hover:underline">
+                    <LinkPreview
+                      url={project.live}
+                      className="border-b border-dotted border-zinc-500 text-zinc-700 transition hover:text-zinc-900"
+                    >
                       Live Demo
-                    </a>
+                    </LinkPreview>
                     <a href={project.code} className="text-zinc-700 underline-offset-4 hover:underline">
                       Source Code
                     </a>
