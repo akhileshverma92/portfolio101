@@ -185,7 +185,7 @@ export default function Home() {
               </a>
             ))}
             <a
-              href="/cv.pdf"
+              href="/https://drive.google.com/file/d/1FvmsgeM9XuBlecT7GR5NqBsW1KFuzKbM/view?usp=drive_link"
               download
               className="ml-auto  px-3 py-1.5 text-sm text-zinc-700 transition hover:border-zinc-500"
             >
