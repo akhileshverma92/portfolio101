@@ -15,31 +15,32 @@ import { ImagesBadge } from "@/components/ui/images-badge";
 import Image from "next/image";
 
 const skills = {
-  languages: ["JavaScript", "Python", "TypeScript (Beginner)"],
-  web: [
-    "HTML",
-    "CSS",
-    "React.js",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "Next.js (Beginner)",
-    "Tailwind CSS",
-    "Sass",
+  shopify: [
+    "Shopify Polaris",
+    "Liquid",
+    "Shopify CLI",
+    "Shopify App Development",
+    "Shopify GraphQL Admin API",
+    "Shopify Functions",
+    "Embedded Apps",
+    "Shopify Theme Development",
   ],
-  tools: ["VS Code", "GitHub", "Postman", "Vercel", "Appwrite", "Clerk", "OAuth"],
-  design: ["Canva", "Figma", "Framer Motion"],
+  frontend: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "Framer Motion"],
+  backend: ["Node.js", "Express.js", "MongoDB", "Appwrite"],
+  tools: ["Git", "GitHub", "Postman", "VS Code", "Cursor", "Vercel", "Figma", "Canva"],
 };
 
 const experiences = [
   {
-    role: "React Engineer",
-    company: "EcomSyncify (EcomZenith)",
+    role: "Frontend Developer",
+    company: "EcomZenith LLP",
     companyUrl: "https://ecomzenith.com/",
     duration: "Aug 2025 - Present",
     points: [
-      "Building scalable ecommerce interfaces using React and modern frontend architecture.",
-      "Developing merchant-facing features with Shopify Polaris and Shopify Web Components.",
+      "Developing Shopify embedded applications using React.js and Shopify Polaris for merchant workflows.",
+      "Building reusable Polaris-based UI components and responsive merchant dashboards.",
+      "Customizing Shopify themes with Liquid to improve storefront usability and conversion flow.",
+      "Integrating backend APIs and optimizing performance for scalable, merchant-facing experiences.",
     ],
   },
   {
@@ -60,42 +61,26 @@ const experiences = [
 
 const projects = [
   {
-    name: "Ochi 2.0",
-    tech: ["React", "Tailwind CSS", "Framer Motion", "Locomotive Scroll"],
+    name: "Custom Shopify Theme",
+    tech: ["Shopify", "Liquid", "JavaScript", "HTML", "CSS", "Shopify CLI"],
     description:
-      "A visually rich React project with smooth scrolling, modern animations, and polished interactions.",
-    live: "https://ochi-2-0.vercel.app/",
+      "Developed a custom Shopify theme from scratch with reusable sections, responsive storefront pages, and optimized Lighthouse scores (Performance 81, Accessibility 90, Best Practices 100, SEO 92).",
+    live: "https://ecomzenith.com/",
     code: "#",
   },
   {
-    name: "Canvas Share",
-    tech: ["React", "Node.js", "Express", "Socket.io", "Clerk"],
+    name: "AI Tailwind Generator",
+    tech: ["React", "Tailwind CSS", "Gemini API", "Framer Motion"],
     description:
-      "A real-time collaborative whiteboard where multiple users can draw and chat using room IDs.",
+      "AI-powered tool that generates production-ready Tailwind CSS utility classes to speed up frontend delivery and component styling.",
     live: "#",
     code: "#",
   },
   {
-    name: "OSSphere",
-    tech: ["React", "Firebase"],
+    name: "HostelCart India",
+    tech: ["React", "Appwrite", "Google OAuth"],
     description:
-      "An open-source discovery platform with AI-powered recommendations based on user skills and interests.",
-    live: "https://ossphere.vercel.app/login",
-    code: "#",
-  },
-  {
-    name: "BharatStartupGallery",
-    tech: ["React", "Next.js", "Tailwind CSS"],
-    description:
-      "A curated startup discovery platform showcasing innovative Indian startups by category, with clean filters and modern UI.",
-    live: "https://bharatstartupgallery.vercel.app/",
-    code: "#",
-  },
-  {
-    name: "TailwindGPT",
-    tech: ["React", "Tailwind CSS", "Gemini API"],
-    description:
-      "AI-powered Tailwind CSS generator that returns ready-to-use className snippets with copy support.",
+      "Marketplace platform enabling students to buy and sell second-hand products locally with responsive interfaces and user-friendly product flows.",
     live: "#",
     code: "#",
   },
@@ -165,12 +150,12 @@ export default function Home() {
               </div>
             </FollowerPointerCard>
             <p className="mt-4 max-w-2xl text-[15px] leading-7 text-zinc-600">
-              React Developer at EcomSyncify with practical experience across the{" "}
-              <Highlight className="text-black dark:text-white">MERN stack</Highlight>, focused on
-              building modern interfaces that feel fast, clear, and intuitive. I enjoy crafting
-              thoughtful UI structure, consistent design systems, and smooth user flows while keeping
-              code scalable and maintainable. From idea framing to final delivery, I like turning
-              product concepts into polished, reliable web experiences.
+              Frontend Developer at EcomZenith | Shopify Polaris | Shopify Themes | Embedded Apps. I
+              build fast, scalable, and user-friendly e-commerce experiences using{" "}
+              <Highlight className="text-black dark:text-white">React.js, Polaris, and Liquid</Highlight>{" "}
+              for merchant dashboards, embedded app interfaces, and storefront customization. I focus on
+              clean UI architecture, API-driven workflows, and performance-first delivery for modern
+              Shopify ecosystems.
             </p>
           </div>
 
@@ -225,7 +210,7 @@ export default function Home() {
             <div className="grid gap-4 sm:grid-cols-2">
               <FollowerPointerCard
                 title={
-                  <> <span className="text-zinc-100" > “JavaScript fluent, Python solid, TypeScript… still convincing me 😄”</span>
+                  <> <span className="text-zinc-100" > “Building merchant-first Shopify experiences with Polaris + Liquid 🛍️”</span>
                   </>
                 }
               >
@@ -234,10 +219,10 @@ export default function Home() {
                   className="px-5 py-8 sm:px-6 sm:py-10"
                 >
                   <div>
-                    <h3 className="mb-3 text-sm font-semibold text-zinc-100">Languages</h3>
+                    <h3 className="mb-3 text-sm font-semibold text-zinc-100">Shopify</h3>
 
                     <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
-                      {skills.languages.map((item) => (
+                      {skills.shopify.map((item) => (
                         <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
                           {item}
                         </span>
@@ -250,7 +235,7 @@ export default function Home() {
               </FollowerPointerCard>
               <FollowerPointerCard
                 title={
-                  <> <span className="text-zinc-100" > “I build fast, smooth apps that actually feel good to use ⚡”</span>
+                  <> <span className="text-zinc-100" > “Modern React interfaces optimized for speed, clarity, and scale ⚡”</span>
                   </>
                 }
               >
@@ -259,9 +244,9 @@ export default function Home() {
                   className="px-5 py-8 sm:px-6 sm:py-10"
                 >
                   <div>
-                    <h3 className="mb-3 text-sm font-semibold text-zinc-100">Web & Frameworks</h3>
+                    <h3 className="mb-3 text-sm font-semibold text-zinc-100">Frontend</h3>
                     <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
-                      {skills.web.map((item) => (
+                      {skills.frontend.map((item) => (
                         <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
                           {item}
                         </span>
@@ -272,7 +257,7 @@ export default function Home() {
               </FollowerPointerCard>
               <FollowerPointerCard
                 title={
-                  <> <span className="text-zinc-100" > “My daily toolkit for coding, debugging, and shipping faster 🚀”</span>
+                  <> <span className="text-zinc-100" > “Reliable APIs and scalable backend foundations for frontend workflows 🚀”</span>
                   </>
                 }
               >
@@ -281,9 +266,9 @@ export default function Home() {
                   className="px-5 py-8 sm:px-6 sm:py-10"
                 >
                   <div>
-                    <h3 className="mb-3 text-sm font-semibold text-zinc-100">Tools & Technologies</h3>
+                    <h3 className="mb-3 text-sm font-semibold text-zinc-100">Backend</h3>
                     <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
-                      {skills.tools.map((item) => (
+                      {skills.backend.map((item) => (
                         <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
                           {item}
                         </span>
@@ -294,7 +279,7 @@ export default function Home() {
               </FollowerPointerCard>
               <FollowerPointerCard
                 title={
-                  <> <span className="text-zinc-100" > “Clean UI, smooth vibes, and zero confusion 😎”</span>
+                  <> <span className="text-zinc-100" > “Tooling that helps me ship clean merchant dashboards faster 😎”</span>
                   </>
                 }
               >
@@ -303,9 +288,9 @@ export default function Home() {
                   className="px-5 py-8 sm:px-6 sm:py-10"
                 >
                   <div>
-                    <h3 className="mb-3 text-sm font-semibold text-zinc-100">Design</h3>
+                    <h3 className="mb-3 text-sm font-semibold text-zinc-100">Tools</h3>
                     <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
-                      {skills.design.map((item) => (
+                      {skills.tools.map((item) => (
                         <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
                           {item}
                         </span>
