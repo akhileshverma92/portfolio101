@@ -19,9 +19,7 @@ const skills = {
     "Shopify Polaris",
     "Liquid",
     "Shopify CLI",
-    "Shopify App Development",
-    "Shopify GraphQL Admin API",
-    "Shopify Functions",
+    "Shopify App Development", 
     "Embedded Apps",
     "Shopify Theme Development",
   ],
@@ -47,7 +45,7 @@ const experiences = [
     role: "Jr. Associate Developer",
     company: "DigiCoders Pvt Ltd",
     companyUrl: "https://thedigicoders.com/",
-    duration: "May 2025 - Aug 2025",
+    duration: "March 2025 - Sep 2025",
     points: ["Worked on real-world development projects", "Gained industry-level experience"],
   },
   {
@@ -65,8 +63,8 @@ const projects = [
     tech: ["Shopify", "Liquid", "JavaScript", "HTML", "CSS", "Shopify CLI"],
     description:
       "Developed a custom Shopify theme from scratch with reusable sections, responsive storefront pages, and optimized Lighthouse scores (Performance 81, Accessibility 90, Best Practices 100, SEO 92).",
-    live: "https://ecomzenith.com/",
-    code: "#",
+    live: "https://sprinto-dev.myshopify.com/",
+    code: "1234",
   },
   {
     name: "AI Tailwind Generator",
@@ -81,7 +79,7 @@ const projects = [
     tech: ["React", "Appwrite", "Google OAuth"],
     description:
       "Marketplace platform enabling students to buy and sell second-hand products locally with responsive interfaces and user-friendly product flows.",
-    live: "#",
+    live: "https://hostelcartindia.live/",
     code: "#",
   },
 ];
@@ -170,7 +168,7 @@ export default function Home() {
               </a>
             ))}
             <a
-              href="https://drive.google.com/file/d/1FvmsgeM9XuBlecT7GR5NqBsW1KFuzKbM/view?usp=sharing"
+              href="https://drive.google.com/file/d/1L7wIh4lQ-Mck8JwTIM_6p3xa7f7Fczcz/view?usp=sharing"
               target="_blank"
               className="ml-auto  px-3 py-1.5 text-sm text-zinc-700 transition hover:border-zinc-500"
             >
