@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { motion, AnimatePresence, useMotionValue } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -16,23 +16,16 @@ export const FollowerPointerCard = ({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const ref = React.useRef<HTMLDivElement>(null);
-  const [rect, setRect] = useState<DOMRect | null>(null);
-  const [isInside, setIsInside] = useState<boolean>(false); // Add this line
-
-  useEffect(() => {
-    if (ref.current) {
-      setRect(ref.current.getBoundingClientRect());
-    }
-  }, []);
+  const [isInside, setIsInside] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (rect) {
-      const scrollX = window.scrollX;
-      const scrollY = window.scrollY;
-      x.set(e.clientX - rect.left + scrollX);
-      y.set(e.clientY - rect.top + scrollY);
-    }
+    if (!ref.current) return;
+    // Recalculate on every move so scroll/resize don't desync the pointer
+    const { left, top } = ref.current.getBoundingClientRect();
+    x.set(e.clientX - left);
+    y.set(e.clientY - top);
   };
+
   const handleMouseLeave = () => {
     setIsInside(false);
   };
@@ -40,6 +33,7 @@ export const FollowerPointerCard = ({
   const handleMouseEnter = () => {
     setIsInside(true);
   };
+
   return (
     <div
       onMouseLeave={handleMouseLeave}
@@ -77,13 +71,16 @@ export const FollowPointer = ({
     "#ef4444",
     "#eab308",
   ];
+  const [color] = useState(
+    () => colors[Math.floor(Math.random() * colors.length)]
+  );
+
   return (
     <motion.div
-      className="absolute z-50 h-4 w-4 rounded-full"
+      className="pointer-events-none absolute z-50 h-4 w-4 rounded-full"
       style={{
         top: y,
         left: x,
-        pointerEvents: "none",
       }}
       initial={{
         scale: 1,
@@ -112,7 +109,7 @@ export const FollowPointer = ({
       </svg>
       <motion.div
         style={{
-          backgroundColor: colors[Math.floor(Math.random() * colors.length)],
+          backgroundColor: color,
         }}
         initial={{
           scale: 0.5,
@@ -126,9 +123,7 @@ export const FollowPointer = ({
           scale: 0.5,
           opacity: 0,
         }}
-        className={
-          "min-w-max rounded-full bg-neutral-200 px-2 py-2 text-xs whitespace-nowrap text-white"
-        }
+        className="min-w-max rounded-full px-2 py-2 text-xs whitespace-nowrap text-white"
       >
         {title || `William Shakespeare`}
       </motion.div>

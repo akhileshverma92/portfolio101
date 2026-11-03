@@ -1,31 +1,46 @@
 "use client";
 
-import DottedGlowBackgroundDemo from "@/components/dotted-glow-background-demo";
 import NoiseBackgroundDemo from "@/components/noise-background-demo";
-import TooltipCardDemo from "@/components/tooltip-card-demo";
 import { Cover } from "@/components/ui/cover";
-import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 import { FollowerPointerCard } from "@/components/ui/following-pointer";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { LinkPreview } from "@/components/ui/link-preview";
-import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { WobbleCard } from "@/components/ui/wobble-card";
 import { Tooltip } from "@/components/ui/tooltip-card";
 import { ImagesBadge } from "@/components/ui/images-badge";
-import Image from "next/image";
 
 const skills = {
   shopify: [
     "Shopify Polaris",
     "Liquid",
     "Shopify CLI",
-    "Shopify App Development", 
+    "Shopify App Development",
     "Embedded Apps",
     "Shopify Theme Development",
   ],
-  frontend: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "Framer Motion"],
-  backend: ["Node.js", "Express.js", "MongoDB", "Appwrite"],
-  tools: ["Git", "GitHub", "Postman", "VS Code", "Cursor", "Vercel", "Figma", "Canva"],
+  frontend: [
+    "React.js",
+    "Next.js",
+    "TypeScript",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Tailwind CSS",
+    "Vite",
+    "Framer Motion",
+  ],
+  backend: ["Node.js", "MongoDB", "Appwrite", "Supabase", "Python"],
+  tools: [
+    "GitHub",
+    "Postman",
+    "VS Code",
+    "Cursor",
+    "Vercel",
+    "Clerk",
+    "Gemini AI",
+    "Figma",
+    "Canva",
+  ],
 };
 
 const experiences = [
@@ -33,76 +48,106 @@ const experiences = [
     role: "Frontend Developer",
     company: "EcomZenith LLP",
     companyUrl: "https://ecomzenith.com/",
-    duration: "Aug 2025 - Present",
+    duration: "Aug 2025 – Present",
     points: [
-      "Developing Shopify embedded applications using React.js and Shopify Polaris for merchant workflows.",
-      "Building reusable Polaris-based UI components and responsive merchant dashboards.",
-      "Customizing Shopify themes with Liquid to improve storefront usability and conversion flow.",
-      "Integrating backend APIs and optimizing performance for scalable, merchant-facing experiences.",
+      "Developed embedded Shopify applications using React.js and Shopify Polaris, following Shopify's design system and UX guidelines.",
+      "Built and maintained the complete frontend of SEOLister, a SaaS platform, using Next.js, React.js, and modern frontend technologies.",
+      "Designed responsive interfaces for dashboards, product listing management, and AI-powered SEO optimization features.",
+      "Created reusable Polaris components and scalable UI architectures for Shopify applications.",
+      "Customized Shopify app interfaces to improve merchant workflows and usability.",
+      "Optimized application performance through efficient component rendering, responsive design, and frontend best practices.",
     ],
   },
   {
-    role: "Jr. Associate Developer",
-    company: "DigiCoders Pvt Ltd",
+    role: "Web Developer",
+    company: "DigiCoders Technologies",
     companyUrl: "https://thedigicoders.com/",
-    duration: "March 2025 - Sep 2025",
-    points: ["Worked on real-world development projects", "Gained industry-level experience"],
+    duration: "Mar 2025 – Sep 2025",
+    points: [
+      "Built intuitive, user-friendly frontend interfaces.",
+      "Developed responsive UI components for seamless experiences across devices and browsers.",
+      "Collaborated with design teams to translate UI/UX designs into functional web interfaces.",
+      "Built and maintained web application frontends with a focus on usability and performance.",
+    ],
   },
   {
-    role: "Summer Training in Python",
+    role: "Python Summer Training",
     company: "SV Infotech",
     companyUrl: "https://www.svinfotech.co.in/",
-    duration: "Aug 2024 - Sep 2024",
-    points: ["Hands-on Python training", "Built practical foundations for backend logic"],
+    duration: "Aug 2024 – Sep 2024",
+    points: [
+      "Completed hands-on training in Python programming fundamentals.",
+      "Built basic applications focused on logic building and problem-solving.",
+      "Gained exposure to real-world development practices and debugging techniques.",
+    ],
   },
 ];
 
 const projects = [
   {
-    name: "Custom Shopify Theme",
-    tech: ["Shopify", "Liquid", "JavaScript", "HTML", "CSS", "Shopify CLI"],
+    name: "Munch Menu",
+    tech: ["Next.js", "React.js", "Tailwind CSS", "Supabase", "Cloudflare AI"],
     description:
-      "Developed a custom Shopify theme from scratch with reusable sections, responsive storefront pages, and optimized Lighthouse scores (Performance 81, Accessibility 90, Best Practices 100, SEO 92).",
-    live: "https://sprinto-dev.myshopify.com/",
-    code: "1234",
-  },
-  {
-    name: "AI Tailwind Generator",
-    tech: ["React", "Tailwind CSS", "Gemini API", "Framer Motion"],
-    description:
-      "AI-powered tool that generates production-ready Tailwind CSS utility classes to speed up frontend delivery and component styling.",
-    live: "#",
+      "Restaurant SaaS platform for QR-based ordering and digital menus, with dashboards for menu management, order tracking, and kitchen operations. Includes AI-powered menu creation that extracts and organizes menu items from images.",
+    live: "https://munchmenu.local11.online/",
     code: "#",
   },
   {
     name: "HostelCart India",
-    tech: ["React", "Appwrite", "Google OAuth"],
+    tech: ["React.js", "Appwrite", "Tailwind CSS", "Google OAuth"],
     description:
-      "Marketplace platform enabling students to buy and sell second-hand products locally with responsive interfaces and user-friendly product flows.",
-    live: "https://hostelcartindia.live/",
+      "Student-focused marketplace for buying and selling second-hand items within a local city, with Google OAuth authentication and Appwrite for database, auth, and real-time backend services.",
+    live: "https://hostelcartindia.live",
     code: "#",
+  },
+  {
+    name: "Greenyz Shopify Theme",
+    tech: ["Shopify Liquid", "HTML", "CSS", "JavaScript"],
+    description:
+      "Custom Shopify theme built from scratch with reusable sections and blocks for Theme Editor customization. Includes responsive, mobile-first layouts for homepage, product, collection, cart, and navigation pages.",
+    live: "https://sprinto-dev.myshopify.com/",
+    code: "1234",
+    storePassword: true,
   },
 ];
 
 const achievements = [
   {
-    title: "Completed 1-year Web Development Course (STP Computer Education)",
+    title:
+      "Completed a comprehensive one-year Web Development program with hands-on experience in modern frontend tools.",
   },
   {
-    title: "Community Volunteer at FOSS United Kanpur",
-    tooltip: "Contributed to local open-source events and helped attendees with setup/support.",
+    title: "Actively involved in the open-source community through FOSS United Kanpur",
+    tooltip:
+      "Contributing to events and collaboration initiatives in the local open-source community.",
   },
   {
-    title: "Volunteered in National Seminar (Oct 2024)",
+    title: "Helped organize a national-level tech seminar, coordinating activities and on-ground execution.",
   },
   {
     title: "Participated in FOSS Hack 2025",
-    tooltip: "Worked in a team hackathon environment and built rapid prototypes.",
+    tooltip:
+      "Collaborating and building solutions in a fast-paced hackathon environment.",
+  },
+];
+
+const education = [
+  {
+    school: "Government Polytechnic Kanpur",
+    location: "Kanpur Nagar, Uttar Pradesh",
+    detail: "Diploma in Information Technology",
+    duration: "2022 – 2025",
+  },
+  {
+    school: "Om Sai Vidya Mandir Inter College",
+    location: "Lakhimpur Kheri, Uttar Pradesh",
+    detail: "Intermediate (Class XII), Science Stream — 76.6%",
+    duration: "2020 – 2022",
   },
 ];
 
 const socialLinks = [
-  { label: "Email", href: "mailto:akhileshverma734867@gmail.com" },
+  { label: "Email", href: "mailto:akhileshverma734@gmail.com" },
   { label: "Call", href: "tel:+917348675182" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
@@ -120,14 +165,15 @@ function Section({ id, title, children }: { id: string; title: string; children:
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#f6f6f6] px-4 py-10 text-zinc-700">
-
       <main className="mx-auto w-full max-w-3xl">
         <header className="space-y-5">
           <div>
-            <p className="text-sm text-zinc-500">Lucknow, Uttar Pradesh, India</p>
+            <p className="text-sm text-zinc-500">AI Web Developer | Shopify Developer</p>
             <FollowerPointerCard
               title={
-                <> <span > नमस्ते </span>
+                <>
+                  {" "}
+                  <span> नमस्ते </span>
                 </>
               }
             >
@@ -148,29 +194,26 @@ export default function Home() {
               </div>
             </FollowerPointerCard>
             <p className="mt-4 max-w-2xl text-[15px] leading-7 text-zinc-600">
-              Frontend Developer at EcomZenith | Shopify Polaris | Shopify Themes | Embedded Apps. I
-              build fast, scalable, and user-friendly e-commerce experiences using{" "}
-              <Highlight className="text-black dark:text-white">React.js, Polaris, and Liquid</Highlight>{" "}
-              for merchant dashboards, embedded app interfaces, and storefront customization. I focus on
-              clean UI architecture, API-driven workflows, and performance-first delivery for modern
-              Shopify ecosystems.
+              Frontend Developer experienced in building responsive web applications using{" "}
+              <Highlight className="text-black dark:text-white">
+                React.js, Next.js, and Tailwind CSS
+              </Highlight>
+              . Skilled in creating scalable UI architectures, AI-powered SaaS platforms, and
+              high-performance user experiences, with additional expertise in Shopify app development
+              using Polaris and Shopify theme development using Liquid.
             </p>
           </div>
 
           <nav className="flex flex-wrap items-center gap-4 text-sm text-zinc-500">
             {socialLinks.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="transition hover:text-zinc-800"
-              >
+              <a key={item.label} href={item.href} className="transition hover:text-zinc-800">
                 {item.label}
               </a>
             ))}
             <a
               href="https://drive.google.com/file/d/1L7wIh4lQ-Mck8JwTIM_6p3xa7f7Fczcz/view?usp=sharing"
               target="_blank"
-              className="ml-auto  px-3 py-1.5 text-sm text-zinc-700 transition hover:border-zinc-500"
+              className="ml-auto px-3 py-1.5 text-sm text-zinc-700 transition hover:border-zinc-500"
             >
               <NoiseBackgroundDemo />
             </a>
@@ -208,7 +251,12 @@ export default function Home() {
             <div className="grid gap-4 sm:grid-cols-2">
               <FollowerPointerCard
                 title={
-                  <> <span className="text-zinc-100" > “Building merchant-first Shopify experiences with Polaris + Liquid 🛍️”</span>
+                  <>
+                    {" "}
+                    <span className="text-zinc-100">
+                      {" "}
+                      “Building merchant-first Shopify experiences with Polaris + Liquid 🛍️”
+                    </span>
                   </>
                 }
               >
@@ -218,7 +266,6 @@ export default function Home() {
                 >
                   <div>
                     <h3 className="mb-3 text-sm font-semibold text-zinc-100">Shopify</h3>
-
                     <div className="flex flex-wrap gap-2 text-sm text-zinc-200">
                       {skills.shopify.map((item) => (
                         <span key={item} className="rounded-full border border-zinc-600 px-3 py-1">
@@ -226,14 +273,17 @@ export default function Home() {
                         </span>
                       ))}
                     </div>
-
                   </div>
                 </WobbleCard>
-
               </FollowerPointerCard>
               <FollowerPointerCard
                 title={
-                  <> <span className="text-zinc-100" > “Modern React interfaces optimized for speed, clarity, and scale ⚡”</span>
+                  <>
+                    {" "}
+                    <span className="text-zinc-100">
+                      {" "}
+                      “Modern React interfaces optimized for speed, clarity, and scale ⚡”
+                    </span>
                   </>
                 }
               >
@@ -255,7 +305,12 @@ export default function Home() {
               </FollowerPointerCard>
               <FollowerPointerCard
                 title={
-                  <> <span className="text-zinc-100" > “Reliable APIs and scalable backend foundations for frontend workflows 🚀”</span>
+                  <>
+                    {" "}
+                    <span className="text-zinc-100">
+                      {" "}
+                      “Reliable APIs and scalable backend foundations for frontend workflows 🚀”
+                    </span>
                   </>
                 }
               >
@@ -277,7 +332,12 @@ export default function Home() {
               </FollowerPointerCard>
               <FollowerPointerCard
                 title={
-                  <> <span className="text-zinc-100" > “Tooling that helps me ship clean merchant dashboards faster 😎”</span>
+                  <>
+                    {" "}
+                    <span className="text-zinc-100">
+                      {" "}
+                      “Tooling that helps me ship clean merchant dashboards faster 😎”
+                    </span>
                   </>
                 }
               >
@@ -328,10 +388,29 @@ export default function Home() {
                     >
                       Live Demo
                     </LinkPreview>
-                    <a href={project.code} className="text-zinc-700 underline-offset-4 hover:underline">
-                      Source Code
-                    </a>
+                    {project.storePassword ? (
+                      <span className="text-zinc-500">Store password: {project.code}</span>
+                    ) : project.code !== "#" ? (
+                      <a href={project.code} className="text-zinc-700 underline-offset-4 hover:underline">
+                        Source Code
+                      </a>
+                    ) : null}
                   </div>
+                </article>
+              ))}
+            </div>
+          </Section>
+
+          <Section id="education" title="Education">
+            <div className="space-y-5">
+              {education.map((item) => (
+                <article key={item.school} className="space-y-1">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h3 className="text-lg font-semibold text-zinc-800">{item.school}</h3>
+                    <span className="text-xs text-zinc-500">{item.duration}</span>
+                  </div>
+                  <p className="text-sm text-zinc-600">{item.detail}</p>
+                  <p className="text-xs text-zinc-500">{item.location}</p>
                 </article>
               ))}
             </div>
@@ -343,9 +422,7 @@ export default function Home() {
                 <li key={item.title}>
                   {item.tooltip ? (
                     <Tooltip content={item.tooltip} containerClassName=" inline-block text-zinc-600">
-                      <span className="bg-red border-b border-dotted border-zinc-400">
-                        {item.title}
-                      </span>
+                      <span className="bg-red border-b border-dotted border-zinc-400">{item.title}</span>
                     </Tooltip>
                   ) : (
                     item.title
@@ -359,19 +436,26 @@ export default function Home() {
             <div className="grid gap-4 text-sm text-zinc-600 sm:grid-cols-3">
               <div>
                 <p className="text-[11px] uppercase tracking-wider text-zinc-500">Email</p>
-                <a href="mailto:akhileshverma734867@gmail.com" className="mt-1 block hover:underline">
-                  akhileshverma734867@gmail.com
+                <a href="mailto:akhileshverma734@gmail.com" className="mt-1 block hover:underline">
+                  akhileshverma734@gmail.com
                 </a>
               </div>
               <div>
                 <p className="text-[11px] uppercase tracking-wider text-zinc-500">Phone</p>
                 <a href="tel:+917348675182" className="mt-1 block hover:underline">
-                  +91-7348675182
+                  +91 7348675182
                 </a>
               </div>
               <div>
-                <p className="text-[11px] uppercase tracking-wider text-zinc-500">Location</p>
-                <p className="mt-1">Lucknow, Uttar Pradesh, India</p>
+                <p className="text-[11px] uppercase tracking-wider text-zinc-500">Portfolio</p>
+                <a
+                  href="https://akhileshdev.vercel.app"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-1 block hover:underline"
+                >
+                  akhileshdev.vercel.app
+                </a>
               </div>
             </div>
           </Section>
@@ -381,7 +465,6 @@ export default function Home() {
           </footer>
         </div>
       </main>
-
     </div>
   );
 }
